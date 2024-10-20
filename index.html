@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        div{
+            margin-top: 100px;
+            width: 40%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        textarea{
+            width: 90%;
+            height: 150px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>MESSAGE</h2>
+        <h3 style="text-align: center;">Maximum Allowed Characters are 200 </h3>
+        <textarea onkeyup="dd(event)" name="message" id="message"></textarea>
+        <h4 id="remaining" onkeyup="dd(event)">Remaining Characters 200/200</h4>
+    </div>
+
+    <script>
+        var message = document.getElementById("message")
+        var remaining = document.getElementById("remaining")
+        var max = 200;
+
+        function dd(){
+            remaining.textContent = "Remaining Characters 200/" + (max - message.value.trim().length)
+
+            if(message.value.trim().length>=200){
+                alert("dont")
+                console.log(message.value.length);
+                message.disabled = true;
+                
+            }
+
+            
+            
+
+        }
+        
+    </script>
+</body>
+</html>
